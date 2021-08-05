@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         Item item = new Item();
         item.setName("Item  " + i);
         item.setColor("Color  " + i);
-        disposable.add(AppDatabase.getAppDatabase(this).itemDao().insertAddon(item).subscribeOn(Schedulers.io())
+        disposable.add(AppDatabase.getAppDatabase(this).itemDao().insertItem(item).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new DisposableSingleObserver<Long>() {
 

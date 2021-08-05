@@ -16,11 +16,8 @@ public interface ItemDao {
     @Query("SELECT * FROM item")
     Single<List<Item>> getAll();
 
-    @Query("SELECT COUNT(*) from item")
-    int countAddons();
-
     @Insert
-    Single<Long> insertAddon(Item item);
+    Single<Long> insertItem(Item item);
 
     @Query("DELETE FROM item")
     Single<Integer> delete();
